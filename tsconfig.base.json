@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "moleculer-universal-api": [
+        "packages/moleculer-universal-api/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
