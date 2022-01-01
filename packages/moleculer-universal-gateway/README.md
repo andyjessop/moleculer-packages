@@ -2,8 +2,6 @@
 
 `moleculer-universal-gateway` allows you to use any node API app (e.g. `express`, `koa`, `hapi`, `feathers`, `nestjs`) as an API gateway.
 
-**NB: This is an alpha version as it hasn't been tested with multiple frameworks yet. So please use with caution.**
-
 ## Installation
 
 `npm i moleculer-universal-gateway`
