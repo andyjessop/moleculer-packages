@@ -1,6 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "moleculer-universal-api": "packages/moleculer-universal-api"
+    "moleculer-universal-gateway": "packages/moleculer-universal-gateway"
   }
 }

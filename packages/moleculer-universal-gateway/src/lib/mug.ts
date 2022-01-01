@@ -7,16 +7,19 @@ export type App = {
   stop: () => void;
 };
 
-export function mua<T = unknown>(createApp: CreateApp<T>, {
-  dependencies,
-  ...rest
-}: {
-  dependencies?:
-    | string
-    | Moleculer.ServiceDependency
-    | (string | Moleculer.ServiceDependency)[];
-  rest?: Moleculer.ServiceSchema;
-}) {
+export function mug<T = unknown>(
+  createApp: CreateApp<T>,
+  {
+    dependencies,
+    ...rest
+  }: {
+    dependencies?:
+      | string
+      | Moleculer.ServiceDependency
+      | (string | Moleculer.ServiceDependency)[];
+    rest?: Moleculer.ServiceSchema;
+  }
+) {
   let app: App;
 
   return {

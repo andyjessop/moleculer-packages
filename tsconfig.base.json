@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "moleculer-universal-api": [
-        "packages/moleculer-universal-api/src/index.ts"
+      "@moleculer-modules/moleculer-universal-gateway": [
+        "packages/moleculer-universal-gateway/src/index.ts"
       ]
     }
   },

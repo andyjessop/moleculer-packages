@@ -4,4 +4,4 @@ This is a repository of packages for [moleculerjs](https://github.com/moleculerj
 
 ## Packages
 
-- [moleculer-universal-api](./packages/moleculer-universal-api/README.md) - a gateway service that allows you to connect any node API framework to a moleculer broker
+- [moleculer-universal-gateway](./packages/moleculer-universal-gateway/README.md) - a gateway service that allows you to connect any node API framework to a moleculer broker

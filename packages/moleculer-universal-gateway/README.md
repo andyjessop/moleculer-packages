@@ -1,12 +1,12 @@
-# moleculer-universal-api
+# moleculer-universal-gateway
 
-`moleculer-universal-api` allows you to use any node API app (e.g. `express`, `koa`, `hapi`, `feathers`, `nestjs`) as an API gateway.
+`moleculer-universal-gateway` allows you to use any node API app (e.g. `express`, `koa`, `hapi`, `feathers`, `nestjs`) as an API gateway.
 
 **NB: This is an alpha version as it hasn't been tested with multiple frameworks yet. So please use with caution.**
 
 ## Installation
 
-`npm i moleculer-universal-api`
+`npm i moleculer-universal-gateway`
 
 ## Usage
 
@@ -40,7 +40,7 @@ export function createApp({
     return new Promise<void>((resolve) => {
       server = app.listen(PORT, () => {
         logger.info(`Listening on port ${PORT}`);
-        
+
         resolve());
     });
   }
@@ -63,15 +63,17 @@ export function createApp({
 }
 ```
 
-Then simply create your gateway service using the `mua` function:
+Then simply create your gateway service using the `mug` function:
 
 ```ts
+import { mug } from 'moleculer-universal-gateway';
+
 const broker = new ServiceBroker();
 
 broker.createService(mathService);
 
-const { createService, getApp } = mua(createApp, {
-  dependencies: ['math'],
+const { createService, getApp } = mug(createApp, {
+  dependencies: [logger', 'math'],
   // mixins: ...,
   // settings: ...,
   // methods: ...,
@@ -80,7 +82,7 @@ const { createService, getApp } = mua(createApp, {
 
 createService(broker);
 
-// use `getApp` to retrieve the app instance if you wish to use it later: 
+// use `getApp` to retrieve the app instance if you wish to use it later:
 // const app = getApp();
 // app.use(someMiddleware);
 
@@ -99,7 +101,7 @@ export function withLogger(logger) {
 
 const broker = new ServiceBroker();
 
-const { createService, getApp } = mua(withLogger(broker.logger));
+const { createService, getApp } = mug(withLogger(broker.logger));
 
 createService(broker);
 ```

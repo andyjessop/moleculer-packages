@@ -1,4 +1,4 @@
-import { mua } from './mua';
+import { mug } from './mug';
 import { ServiceBroker } from 'moleculer';
 import Koa from 'koa';
 const router = require('@koa/router')(); // eslint-disable-line
@@ -16,7 +16,7 @@ export function createApp({ math }: { math: MathService }) {
   let server: Server | null = null;
 
   router.get('/add', add);
-  
+
   app.use(router.routes());
 
   return {
@@ -27,7 +27,7 @@ export function createApp({ math }: { math: MathService }) {
 
   async function add(ctx) {
     const added = await math.add({ a: 1, b: 2 });
-    
+
     ctx.body = { added };
   }
 
@@ -72,7 +72,7 @@ describe('moleculerExpress', () => {
 
     broker.createService(mathService);
 
-    gateway = mua(createApp, {
+    gateway = mug(createApp, {
       dependencies: [mathService.name],
     });
 

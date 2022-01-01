@@ -1,4 +1,4 @@
-import { mua } from './mua';
+import { mug } from './mug';
 import { ServiceBroker } from 'moleculer';
 import * as express from 'express';
 import { Server } from 'http';
@@ -64,7 +64,7 @@ describe('moleculerExpress', () => {
 
     broker.createService(mathService);
 
-    gateway = mua(createApp, {
+    gateway = mug(createApp, {
       dependencies: [mathService.name],
     });
 

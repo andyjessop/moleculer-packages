@@ -1,0 +1,34 @@
+{
+  "root": "packages/moleculer-universal-gateway",
+  "sourceRoot": "packages/moleculer-universal-gateway/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/moleculer-universal-gateway",
+        "tsConfig": "packages/moleculer-universal-gateway/tsconfig.lib.json",
+        "packageJson": "packages/moleculer-universal-gateway/package.json",
+        "main": "packages/moleculer-universal-gateway/src/index.ts",
+        "assets": ["packages/moleculer-universal-gateway/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/moleculer-universal-gateway/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/moleculer-universal-gateway"],
+      "options": {
+        "jestConfig": "packages/moleculer-universal-gateway/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
