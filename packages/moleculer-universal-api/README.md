@@ -86,3 +86,20 @@ createService(broker);
 
 return broker.start();
 ```
+
+If you need access to the broker's internal `logger`, there are two strategies. You could either wrap it as a separate service, and pass it in as a dependency as above. Or you could simply wrap your `createApp` and provide it when you create your gateway:
+
+```ts
+export function withLogger(logger) {
+  return function createApp() {
+    const app = express();
+    ...
+  }
+}
+
+const broker = new ServiceBroker();
+
+const { createService, getApp } = mua(withLogger(broker.logger));
+
+createService(broker);
+```
